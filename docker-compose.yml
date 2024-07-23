@@ -7,7 +7,7 @@ services:
       - PORT=8501
     ports:
       - "8501:8501"
-    command: ["streamlit", "run", "app.py", "--server.port=8501"]
+    command: ["streamlit", "run", "main.py", "--server.port=8501"]
 
   chatbot2:
     build: ./app
@@ -15,7 +15,7 @@ services:
       - PORT=8502
     ports:
       - "8502:8501"
-    command: ["streamlit", "run", "app.py", "--server.port=8502"]
+    command: ["streamlit", "run", "main.py", "--server.port=8502"]
 
   nginx:
     build: ./nginx

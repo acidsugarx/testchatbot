@@ -26,3 +26,4 @@ services:
     depends_on:
       - chatbot1
       - chatbot2
+    command: nginx -g 'daemon off';

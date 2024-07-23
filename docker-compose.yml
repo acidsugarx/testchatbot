@@ -1,7 +1,7 @@
+version: '1.01'
+
 networks:
   serv:
-
-version: '1.01'
 
 services:
   chatbot1:

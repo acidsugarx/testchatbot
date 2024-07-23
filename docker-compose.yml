@@ -22,7 +22,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./path/to/nginx.conf:/etc/nginx/conf.d/nginx.conf
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
     depends_on:
       - chatbot1
       - chatbot2

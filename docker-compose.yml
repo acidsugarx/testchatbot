@@ -1,12 +1,26 @@
-
-version: '1'
+version: '1.01'
 
 services:
-  streamlit:
-    build: .
+  chatbot1:
+    build: ./app
+    environment:
+      - PORT=8501
     ports:
       - "8501:8501"
-    volumes:
-      - .:/usr/src/testchatbot
+    command: ["streamlit", "run", "app.py", "--server.port=8501"]
+
+  chatbot2:
+    build: ./app
     environment:
-      - PYTHONUNBUFFERED=1
+      - PORT=8502
+    ports:
+      - "8502:8501"
+    command: ["streamlit", "run", "app.py", "--server.port=8502"]
+
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - chatbot1
+      - chatbot2

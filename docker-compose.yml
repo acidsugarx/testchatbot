@@ -1,7 +1,5 @@
-network:
-  dev:
 
-version: '3.8'
+version: '1'
 
 services:
   streamlit:
@@ -12,5 +10,3 @@ services:
       - .
     environment:
       - PYTHONUNBUFFERED=1
-    networks:
-      - dev

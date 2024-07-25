@@ -60,31 +60,11 @@ def send_prompt(msg: str, access_token: str, messages: list):
     response = requests.post(url, headers=headers, data=payload, verify=False)
     return response.json()["choices"][0]["message"]["content"]
 
-# def send_prompt(msg: str, access_token: str):
-#     url = "https://gigachat.devices.sberbank.ru/api/v1/chat/completions"
-#
-#     payload = json.dumps({
-#         "model": "GigaChat-Plus",
-#         "messages": [
-#             {
-#                 "role": "user",
-#                 "content": msg,
-#             }
-#         ],
-#     })
-#     headers = {
-#         'Content-Type': 'application/json',
-#         'Accept': 'application/json',
-#         'Authorization': f'Bearer {access_token}'
-#     }
-#
-#     response = requests.post(url, headers=headers, data=payload, verify=False)
-#     return response.json()["choices"][0]["message"]["content"]
-
 
 def sent_prompt_and_get_response(msg: str, access_token: str):
-    res = send_prompt(msg, access_token)
+    res = send_prompt(msg, access_token, [])
     data, is_image = get_file_id(res)
     if is_image:
         data = get_image(file_id=data, access_token=access_token)
     return data, is_image
+

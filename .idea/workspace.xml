@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86d35509-d4d1-4994-bd7a-99936c744d5e" name="Changes" comment="init">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="86d35509-d4d1-4994-bd7a-99936c744d5e" name="Changes" comment="def send_promt error fix 'messages'" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -307,7 +305,23 @@
       <option name="project" value="LOCAL" />
       <updated>1721905244370</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="send_promt error fix 'messages'">
+      <option name="closed" value="true" />
+      <created>1721905467389</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1721905467389</updated>
+    </task>
+    <task id="LOCAL-00031" summary="def send_promt error fix 'messages'">
+      <option name="closed" value="true" />
+      <created>1721905480507</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1721905480507</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -318,6 +332,8 @@
     <MESSAGE value="split nginx app commit" />
     <MESSAGE value="messages history" />
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="send_promt error fix 'messages'" />
+    <MESSAGE value="def send_promt error fix 'messages'" />
+    <option name="LAST_COMMIT_MESSAGE" value="def send_promt error fix 'messages'" />
   </component>
 </project>

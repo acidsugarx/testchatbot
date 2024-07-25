@@ -25,7 +25,7 @@ if user_prompt := st.chat_input():
     st.session_state.messages.append({"role": "user", "content": user_prompt})
 
     with st.spinner("В процессе..."):
-        response, is_image = sent_prompt_and_get_response(user_prompt, st.session_state.access_token)
+        response, is_image = sent_prompt_and_get_response(user_prompt, st.session_state.access_token, [])
         if is_image:
             st.chat_message("ai").image(response)
             st.session_state.messages.append({"role": "ai", "content": response, "is_image": True})

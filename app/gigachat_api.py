@@ -67,4 +67,3 @@ def sent_prompt_and_get_response(msg: str, access_token: str):
     if is_image:
         data = get_image(file_id=data, access_token=access_token)
     return data, is_image
-

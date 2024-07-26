@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="86d35509-d4d1-4994-bd7a-99936c744d5e" name="Changes" comment="def send_promt error fix 'messages'">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.streamlit/secrets.toml" beforeDir="false" afterPath="$PROJECT_DIR$/app/.streamlit/secrets.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/gigachat_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/gigachat_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -5,14 +5,18 @@ import streamlit as st
 import requests
 from requests.auth import HTTPBasicAuth
 
+from utills import get_file_id
+
 CLIENT_ID = st.secrets["CLIENT_ID"]
 SECRET = st.secrets["SECRET"]
 
 messages = []
 data = {
-    "model": "GigaChat",
-    "messages": [],
-}
+        "model": "GigaChat-Pro",
+        "messages": [
+
+        ],
+    }
 
 
 def get_access_token() -> str:
@@ -37,7 +41,7 @@ def get_access_token() -> str:
 def send_prompt(msg: str, access_token: str):
     url = "https://gigachat.devices.sberbank.ru/api/v1/chat/completions"
     messages.append({"role": "user", "content": msg})
-    data["messages"].append(messages[-1])
+    data["messages"].append([messages[-1]])
     payload = json.dumps(data)
 
     headers = {
@@ -47,14 +51,6 @@ def send_prompt(msg: str, access_token: str):
     }
 
     response = requests.post(url, headers=headers, data=payload, verify=False)
-
-    try:
-        response_json = response.json()
-        print(response_json)  # Print the response for debugging
-        assistant_message = response_json["choices"][0]["message"]["content"]
-        messages.append({"role": "assistant", "content": assistant_message})
-        data["messages"].append(messages[-1])
-        return assistant_message
-    except KeyError:
-        print(f"Unexpected response structure: {response_json}")
-        return "An error occurred. Please try again."
+    messages.append({"role": "assistant", "content": response.json()["choices"][0]["message"]["content"]})
+    data["messages"].append([messages[-1]])
+    return response.json()["choices"][0]["message"]["content"]

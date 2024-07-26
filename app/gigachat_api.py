@@ -10,7 +10,7 @@ SECRET = st.secrets["SECRET"]
 
 messages = []
 data = {
-    "model": "GigaChat-Plus",
+    "model": "GigaChat",
     "messages": [],
 }
 

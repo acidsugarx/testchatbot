@@ -1,30 +1,55 @@
 import streamlit as st
 
-from gigachat_api import get_access_token, send_prompt
+from gigachat_api import get_access_token, send_prompt, check_credentials
 
-st.title("Чат бот")
 
-if "access_token" not in st.session_state:
-    try:
-        st.session_state.access_token = get_access_token()
-        st.toast("Получил токен")
-    except Exception as e:
-        st.toast(f"Не получилось получить токен: {e}")
+def login_form():
+    st.title("Login")
 
-if "messages" not in st.session_state:
-    st.session_state.messages = [{"role": "ai", "content": "Задавайте свой вопрос, с радостью на него отвечу!"}]
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
 
-for msg in st.session_state.messages:
-    if msg.get("is_image"):
-        st.chat_message(msg["role"]).image(msg["content"])
-    else:
-        st.chat_message(msg["role"]).write(msg["content"])
+    if st.button("Login"):
+        if check_credentials(username, password):
+            st.session_state["authenticated"] = True
+            st.experimental_rerun()
+        else:
+            st.error("Invalid username or password")
 
-if user_prompt := st.chat_input():
-    st.chat_message("user").write(user_prompt)
-    st.session_state.messages.append({"role": "user", "content": user_prompt})
 
-    with st.spinner("В процессе..."):
-        response = send_prompt(user_prompt, st.session_state.access_token)
-        st.chat_message("ai").write(response)
-        st.session_state.messages.append({"role": "ai", "content": response})
+def main_app():
+    st.title("Чат бот")
+
+    if "access_token" not in st.session_state:
+        try:
+            st.session_state.access_token = get_access_token()
+            st.toast("Получил токен")
+        except Exception as e:
+            st.toast(f"Не получилось получить токен: {e}")
+
+    if "messages" not in st.session_state:
+        st.session_state.messages = [{"role": "ai", "content": "Задавайте свой вопрос, с радостью на него отвечу!"}]
+
+    for msg in st.session_state.messages:
+        if msg.get("is_image"):
+            st.chat_message(msg["role"]).image(msg["content"])
+        else:
+            st.chat_message(msg["role"]).write(msg["content"])
+
+    if user_prompt := st.chat_input():
+        st.chat_message("user").write(user_prompt)
+        st.session_state.messages.append({"role": "user", "content": user_prompt})
+
+        with st.spinner("В процессе..."):
+            response = send_prompt(user_prompt, st.session_state.access_token)
+            st.chat_message("ai").write(response)
+            st.session_state.messages.append({"role": "ai", "content": response})
+
+
+if "authenticated" not in st.session_state:
+    st.session_state["authenticated"] = False
+
+if not st.session_state["authenticated"]:
+    login_form()
+else:
+    main_app()

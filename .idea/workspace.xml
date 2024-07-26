@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="86d35509-d4d1-4994-bd7a-99936c744d5e" name="Changes" comment="model fix - free">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="86d35509-d4d1-4994-bd7a-99936c744d5e" name="Changes" comment="test init" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,7 +53,7 @@
     "Python.gigachat_api.executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "auth",
     "last_opened_file_path": "C:/gigachat/gigachat/app",
     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
@@ -353,7 +351,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721991859923</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="test init">
+      <option name="closed" value="true" />
+      <created>1721998375509</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1721998375509</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -367,6 +373,7 @@
     <MESSAGE value="send_promt error fix 'messages'" />
     <MESSAGE value="def send_promt error fix 'messages'" />
     <MESSAGE value="model fix - free" />
-    <option name="LAST_COMMIT_MESSAGE" value="model fix - free" />
+    <MESSAGE value="test init" />
+    <option name="LAST_COMMIT_MESSAGE" value="test init" />
   </component>
 </project>

@@ -15,6 +15,14 @@ data = {
 }
 
 
+def check_credentials(username, password):
+    valid_users = {
+        "acidsugarx": "123456",
+        "ruslan": "123456"
+    }
+    return valid_users.get(username) == password
+
+
 def get_access_token() -> str:
     url = "https://ngw.devices.sberbank.ru:9443/api/v2/oauth"
     headers = {
@@ -58,3 +66,5 @@ def send_prompt(msg: str, access_token: str):
     except KeyError:
         print(f"Unexpected response structure: {response_json}")
         return "An error occurred. Please try again."
+
+

@@ -12,7 +12,7 @@ if "access_token" not in st.session_state:
         st.toast(f"Не получилось получить токен: {e}")
 
 if "messages" not in st.session_state:
-    st.session_state.messages = [{"role": "ai", "content": "С чем вам помочь?"}]
+    st.session_state.messages = [{"role": "ai", "content": "Задавайте свой вопрос, с радостью на него отвечу!"}]
 
 for msg in st.session_state.messages:
     if msg.get("is_image"):
